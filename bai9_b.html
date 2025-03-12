@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var soLuong, x;
+        var DS = new Array(100);
+
+        soLuong = prompt("Nhập số lượng thiết bị: ");
+        soLuong = parseInt(soLuong);
+        for(var i = 0; i < soLuong; i++) {
+            DS[i] = prompt("Nhap ten thiet bi thu " + (i+1) + ": ", "");
+        }
+
+        document.write("<h1>Danh sách thiết bị là 'Computer'</h1>");
+        document.write("<table border='1' cellspacing='0' cellpadding='5'");
+        document.write("<tr><td>STT</td><td>Ten thiet bi</td></tr>");
+
+        var hasComputer = false;
+        for(var i in DS){
+            if(DS[i] === "Computer") {
+                hasComputer = true;
+                document.write("<tr><td>" + (parseInt(i) +1) + "</td><td>" + DS[i] + "</td></tr>");
+            }
+        }
+
+        document.write("</table>");
+        if(!hasComputer) {
+            document.write("<p>Không có thiết bị nào là 'Computer'.</p>");
+        }
+    </script>
+</body>
+</html>
